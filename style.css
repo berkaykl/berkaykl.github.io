@@ -7,82 +7,71 @@
     --color-mailbox: #252525;
 }
 
-body {
+html, body {
+    width: 100%;
+    height: 100%;
     margin: 0;
     padding: 0;
     user-select: none;
     font-family: 'Raleway', sans-serif;
     background: var(--color-body);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #container {
     width: 800px;
-    height: 470px;
     background-color: var(--color-container);
     margin: auto;
-    margin-top: 250px;
     border-radius: 7px;
     border: 1px solid rgba(255, 255, 255, 0.2);
-
 }
 
 #top-section {
     display: flex;
     flex-direction: row;
-}
-
-#top-section-logo {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 70%;
-}
-
-#myPhoto {
-    width: 35%;
     margin: 20px;
-    border-radius: 5px;
 }
 
-#top-section-logo span h1 {
+#image-container {
+    width: 200px;
+    height: 200px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+#image-container img {
+    width: 100%;
+}
+
+#top-section-name-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 40px;
+}
+
+#top-section-name {
     color: white;
     font-size: 45px;
-    letter-spacing: 2px;
-    margin: 0;
     font-weight: bold;
-    margin-left: 25px;
 }
 
-#top-section-logo span h6 {
-    color: rgb(17, 17, 17);
-    font-size: 15px;
-    letter-spacing: 1px;
-    margin: 0;
+#top-section-name-features {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 4px;
     margin-top: 10px;
-    margin-left: 25px;
-    position: fixed;
-    background: rgb(235, 235, 235);
 }
 
 .typed-cursor {
-    opacity: 0 !important;
+    display: none;
 }
 
-#top-section-domain {
-    position: relative;
-    width: 30%;
-}
-
-#top-section-domain span  {
-    position: absolute;
-    right: 0;
-    font-size: 10px;
-    color: rgba(255, 255, 255, 0.5);
-    margin: 5px 10px;
-    text-align: right;
-}
-
-#mailbox {
+#mail-button {
     width: 100%;
     height: 90px;
     display: flex;
@@ -93,41 +82,35 @@ body {
     color: rgba(255, 255, 255, 0.6);
     font-size: 17px;
     letter-spacing: 1px;
-    margin-top: 30px;
+    margin-top: 50px;
     transition: 250ms;
 }
-
-#mailbox:hover {
-    background-color: rgb(78, 78, 78);
+#mail-button:hover {
     color: white;
+    background-color: #4e4e4e;
 }
 
-#social-media-container {
-    width: 100%;
-    height: 111px;
+footer {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
 }
 
-.social-media-box {
-    width: 33.3%;
+footer a {
     display: flex;
+    width: calc(100% / 4);
+    height: 110px;
     align-items: center;
     justify-content: center;
     text-decoration: none;
     flex-direction: column;
 }
-.social-media-box:hover span {
-    color: white;
-}
 
-.social-media-box .social-media-logo {
+.social-media-logo {
     font-size: 23px;
     color: rgba(255, 255, 255, 0.6);
 }
 
-.social-media-box i {
+.social-media-logo i {
     margin-right: 10px;
 }
 
@@ -137,58 +120,31 @@ body {
     margin-top: 10px;
 }
 
-
-@media screen and (max-width: 800px) {
-    #container {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        margin: 0;
-        border: none;
-        border-radius: 0;
-    }
-
-    #top-section {
-        display: flex;
-        justify-content: center;
-    }
-
-    #top-section-logo {
-        flex-direction: column;
-        margin-top: 20px;
-    }
-    #myPhoto {
-        width: 60%;
-    }
-    #my-infos {
-        position: absolute !important;
-        text-align: center;
-    }
-    #top-section-logo span {
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
-    #top-section-logo span h1 {
-        font-size: 40px;
-    }
-    #top-section-domain {
-        position: absolute;
-        right: 0;
-    }
-
-    #social-media-container {
-        flex-direction: column;
-        height: auto;
-    }
-    .social-media-box {
-        width: 100%;
-        padding: 37px 0;
-    }
+.social-media-buttons:hover .social-media-name, .social-media-buttons:hover .social-media-logo {
+    color: white;
 }
 
 
-::-webkit-scrollbar {
-    display: none;
-    visibility: hidden;
-    opacity: 0
+@media screen and (max-width: 830px) {
+    #container {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        border: none;
+    }
+    #top-section {
+        flex-direction: column;
+        align-items: center;
+    }
+    #top-section-name-container {
+        margin: 0;
+        margin-top: 60px;
+    }
+    footer {
+        display: flex;
+        flex-direction: column;
+    }
+    footer a {
+        width: 100%;
+    }
 }
