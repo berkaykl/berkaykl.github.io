@@ -103,6 +103,7 @@ html, body {
     justify-content: center;
     text-decoration: none;
     flex-direction: column;
+    background-color: var(--color-container);
 }
 
 .social-media-logo {
