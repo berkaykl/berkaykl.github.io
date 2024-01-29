@@ -90,12 +90,12 @@ html, body {
     background-color: #4e4e4e;
 }
 
-footer {
+#footer-section {
     display: flex;
     flex-direction: row;
 }
 
-footer a {
+.social-media-buttons {
     display: flex;
     width: calc(100% / 4);
     height: 110px;
@@ -140,11 +140,11 @@ footer a {
         margin: 0;
         margin-top: 60px;
     }
-    footer {
+    #footer-section {
         display: flex;
         flex-direction: column;
     }
-    footer a {
+    .social-media-buttons {
         width: 100%;
     }
 }
